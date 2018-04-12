@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="">
-        <h1> Hello , world! </h1>
-      </div>
-    );
-  }
-}
+const {Provider, Consumer} = React.createContext("Hello World from BEYOND!");
 
-export default App;
+
+export default () => <Consumer>
+  {
+    value => <h1> {value} </h1>
+  }
+</Consumer>;
