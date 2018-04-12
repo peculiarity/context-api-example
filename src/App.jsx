@@ -5,13 +5,13 @@ const {Provider: SecondProvider} = createContext("none");
 
 const App = () => (
   <Provider value="Hello Georgi">
-    <SecondProvider value="Hello from the circles of hell!">
+    <Provider value="Hello from the circles of hell!">
       <Consumer>
         {
           value => <h1> {value} </h1>
         }
       </Consumer>
-    </SecondProvider>
+    </Provider>
   </Provider>
 )
 
