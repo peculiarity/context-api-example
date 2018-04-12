@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React, { createContext } from 'react';
 
-const {Provider, Consumer} = React.createContext("Hello World from BEYOND!");
+const {Provider, Consumer} = createContext("Hello World from BEYOND!");
+const {Provider: SecondProvider} = createContext("none");
 
 const App = () => (
   <Provider value="Hello Georgi">
-    <Consumer>
-      {
-        value => <h1> {value} </h1>
-      }
-    </Consumer>
+    <SecondProvider value="Hello from the circles of hell!">
+      <Consumer>
+        {
+          value => <h1> {value} </h1>
+        }
+      </Consumer>
+    </SecondProvider>
   </Provider>
 )
 
